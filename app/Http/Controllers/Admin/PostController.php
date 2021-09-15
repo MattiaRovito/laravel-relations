@@ -33,7 +33,8 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('admin.posts.create');
+        $categories = Category::all(); 
+        return view('admin.posts.create', compact('categories'));
     }
 
     /**
@@ -48,7 +49,9 @@ class PostController extends Controller
         // validazione dei dati
         $request->validate([
             'title' => 'required|max:60',
-            'content' => 'required'
+            'content' => 'required',
+            'category_id' => 'nullable|exists:categories_id'
+            // ovvero category_id deve essere messo a null o deve esistere e preso dalla categoria di appartenenza
         ]);
 
 
@@ -151,7 +154,8 @@ class PostController extends Controller
         $request->validate([
             'title' => 'required|max:60',
             'content' => 'required',
-            // 'category_id' =>
+            'category_id' => 'nullable|exists:categories_id'
+            // ovvero category_id deve essere messo a null o deve esistere e preso dalla categoria di appartenenza
         ]);
 
 

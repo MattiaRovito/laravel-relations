@@ -37349,7 +37349,11 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // creiam
 var deleteForm = document.querySelectorAll('.delete-post-form');
 deleteForm.forEach(function (item) {
   item.addEventListener('submit', function (event) {
-    confirm('Sei sicuro di voler cancellare il dato?');
+    var resp = confirm('Sei sicuro di voler cancellare il dato?');
+
+    if (!resp) {
+      event.preventDefault();
+    }
   });
 });
 
@@ -37407,7 +37411,7 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Boolean\Esercitazioni\mamp_public\laravel-boolpress\resources\js\admin.js */"./resources/js/admin.js");
+module.exports = __webpack_require__(/*! C:\Boolean\Esercitazioni\mamp_public\laravel-relations\resources\js\admin.js */"./resources/js/admin.js");
 
 
 /***/ })

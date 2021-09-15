@@ -45,11 +45,11 @@
             @endif
           </p> --}}
           <label for="categorie" class="form-label">Categorie</label>
-          <select name="category_id" id="categorie" class="form-control">
+          <select name="categories_id" id="categorie" class="form-control">
             <option value="">Seleziona una categoria</option>
             @foreach ($categories as $category )
                 <option value="{{$category->id}}"
-                  @if($category->id == old('category_id', $post->category_id)) 
+                  @if($category->id == old('categories_id', $post->category_id)) 
                   selected 
                   @endif>{{$category->name}}</option>
             @endforeach
