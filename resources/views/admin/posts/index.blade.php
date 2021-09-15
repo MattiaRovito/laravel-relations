@@ -2,6 +2,14 @@
 
 @section('content')
 
+<div class="container">
+    {{-- @foreach ( $categories as $category )
+
+    <p>{{$category->name}}</p>
+    <p>{{$category->post->title}}</p>
+        
+    @endforeach --}}
+</div>
 
 <div class="container">
     @if(session('updated'))
