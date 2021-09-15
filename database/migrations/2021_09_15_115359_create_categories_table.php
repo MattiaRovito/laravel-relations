@@ -11,10 +11,14 @@ class CreateCategoriesTable extends Migration
      *
      * @return void
      */
+
+    // Dentro up inseriamo le categorie, quindi effettuiamo l'artisan migrate/il seed e creiamo il CategoriesTableSeeder
     public function up()
     {
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
+            $table->String('name', 30);
+            $table->string('slug')->unique();
             $table->timestamps();
         });
     }
