@@ -150,7 +150,8 @@ class PostController extends Controller
         // validazione dei dati
         $request->validate([
             'title' => 'required|max:60',
-            'content' => 'required'
+            'content' => 'required',
+            // 'category_id' =>
         ]);
 
 
