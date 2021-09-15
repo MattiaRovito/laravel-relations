@@ -36,6 +36,17 @@
           @enderror
         </div>
 
+
+        <div class="mb-3">
+          <label for="categorie" class="form-label">Categorie</label>
+          <select name="category_id" id="categorie" class="form-control">
+            @foreach ($categories as $category )
+                <option value="{{$category->id}}">{{$category->name}}</option>
+            @endforeach
+          </select>
+          
+        </div>
+
         <div class="mb-3">
           <label for="descrizione" class="form-label">Descrizione</label>
          <textarea name="content" id="" cols="30" rows="10" class="form-control
