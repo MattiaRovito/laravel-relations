@@ -47,7 +47,7 @@
 
             <option value="{{$category->id}}"
               @if($category->id == old('categories_id') ) selected 
-              @endif>{{$category->name}}></option>
+              @endif>{{$category->name}}</option>
 
 
             @endforeach
