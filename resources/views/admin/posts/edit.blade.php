@@ -38,10 +38,20 @@
 
 
         <div class="mb-3">
+          {{-- inseriamo un errore (se è vuoto) --}}
+          {{-- <p>
+            @if($post->category)
+            {{$post->category->name}}
+            @endif
+          </p> --}}
           <label for="categorie" class="form-label">Categorie</label>
           <select name="category_id" id="categorie" class="form-control">
+            <option value="">Seleziona una categoria</option>
             @foreach ($categories as $category )
-                <option value="{{$category->id}}">{{$category->name}}</option>
+                <option value="{{$category->id}}"
+                  @if($category->id == old('category_id', $post->category_id)) 
+                  selected 
+                  @endif>{{$category->name}}</option>
             @endforeach
           </select>
           
